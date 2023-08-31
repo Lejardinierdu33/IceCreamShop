@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 class CategoriesSection extends StatelessWidget {
   CategoriesSection({super.key});
 
+
+
+// categories cream
   final categories = [
     {
       'icon': Icons.favorite_border_outlined,
@@ -51,11 +54,17 @@ class CategoriesSection extends StatelessWidget {
             itemBuilder: ((context, index) => Column(
                   children: [
                     Container(
+
+                      // color box
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           color: categories[index]['color'] as Color),
-                      child: Icon(
+                      child: 
+
+                      
+                      // icon
+                      Icon(
                         categories[index]['icon'] as IconData,
                         color: Colors.white,
                         size: 40,
@@ -64,6 +73,9 @@ class CategoriesSection extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
+
+
+                    // title 
                     Text(
                       categories[index]['title'] as String,
                       style: const TextStyle(

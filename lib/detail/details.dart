@@ -2,21 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:ice_cream_shop/models/ice_cream.dart';
 import 'package:readmore/readmore.dart';
 
-class DetailIceCream extends StatelessWidget {
+class DetailIceCream extends StatefulWidget {
   const DetailIceCream(this.cesarean, {Key? key}) : super(key: key);
 
   final IceCream cesarean;
+
+
+
+// button liked gestion
+  @override
+  _DetailIceCreamState createState() => _DetailIceCreamState();
+}
+
+class _DetailIceCreamState extends State<DetailIceCream> {
+  bool isLiked = false; // État du bouton de like
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
+
+          // image top
           SliverAppBar(
-            expandedHeight: 300, // Ajustez la hauteur en conséquence
+            expandedHeight: 300,
             flexibleSpace: FlexibleSpaceBar(
               background: Image.asset(
-                cesarean.bgImage,
+                widget.cesarean.bgImage,
                 fit: BoxFit.cover,
               ),
             ),
@@ -29,16 +41,21 @@ class DetailIceCream extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+
+
+                      // title
                       Text(
-                        cesarean.name,
+                        widget.cesarean.name,
                         style: const TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       const SizedBox(height: 10),
+
+                      // text description
                       ReadMoreText(
-                        cesarean.description,
+                        widget.cesarean.description,
                         trimLines: 4,
                         colorClickableText: Colors.pink,
                         trimMode: TrimMode.Line,
@@ -54,6 +71,9 @@ class DetailIceCream extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 10),
+
+
+                      // logo + score
                       Row(
                         children: [
                           Container(
@@ -61,7 +81,7 @@ class DetailIceCream extends StatelessWidget {
                             height: 100,
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                image: AssetImage(cesarean.icon),
+                                image: AssetImage(widget.cesarean.icon),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -82,7 +102,7 @@ class DetailIceCream extends StatelessWidget {
                                 children: [
                                   for (int i = 0; i < 5; i++)
                                     Icon(
-                                      i < cesarean.score
+                                      i < widget.cesarean.score
                                           ? Icons.star
                                           : Icons.star_border,
                                       size: 20,
@@ -93,6 +113,36 @@ class DetailIceCream extends StatelessWidget {
                             ],
                           ),
                         ],
+                      ),
+                      const SizedBox(height: 10),
+
+                      // button like
+                      Center(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            const Text(
+                              'Do You like Me ?',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontStyle: FontStyle.italic,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            const SizedBox(height: 10),
+                            IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  isLiked = !isLiked; // Inversion de l'état du like
+                                });
+                              },
+                              icon: Icon(
+                                isLiked ? Icons.favorite : Icons.favorite_border,
+                                color: isLiked ? Colors.red : null,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -105,3 +155,4 @@ class DetailIceCream extends StatelessWidget {
     );
   }
 }
+
