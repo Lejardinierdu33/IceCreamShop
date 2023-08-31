@@ -3,6 +3,7 @@ import 'package:ice_cream_shop/contact/contact_page.dart';
 import 'package:ice_cream_shop/home/home.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ice_cream_shop/ice_cream_page/ice_cream_page.dart';
+import 'package:ice_cream_shop/location/location_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -51,6 +52,7 @@ class _MyAppState extends State<MyApp> {
         body: [
           const HomePage(),
           const IceCreamPage(),
+          const LocationPage(),
           const ContactPage(),
         ][_currentIndex],
 
