@@ -15,7 +15,7 @@ class IceCream {
     this.description,
   );
 
-  static List<IceCream> icescreams() {
+  static List<IceCream> cesareans() {
     return [
       IceCream(
           'assets/images/ice_cream_1.png',
@@ -23,7 +23,35 @@ class IceCream {
           'Ice Cream Vanilla',
           4.8,
           4250,
-          'A vanilla ice cream with a futuristic twist, adorned with innovative toppings. Delight in the classic and creamy flavor of vanilla, harmoniously combined with avant-garde toppings that transport your taste buds into the future. Experience the familiar comfort of vanilla while indulging in the excitement of cutting-edge toppings, creating a delightful fusion of tradition and innovation.')
+          'A vanilla ice cream with a futuristic twist, adorned with innovative toppings. Delight in the classic and creamy flavor of vanilla, harmoniously combined with avant-garde toppings that transport your taste buds into the future. Experience the familiar comfort of vanilla while indulging in the excitement of cutting-edge toppings, creating a delightful fusion of tradition and innovation.'),
+      IceCream(
+          'assets/images/ice_cream_2.png',
+          'assets/images/ice_cream_logo.png',
+          'Ice Cream Mango',
+          4.2,
+          2870,
+          'A vanilla ice cream with a futuristic twist, adorned with innovative toppings. Delight in the classic and creamy flavor of vanilla, harmoniously combined with avant-garde toppings that transport your taste buds into the future. Experience the familiar comfort of vanilla while indulging in the excitement of cutting-edge toppings, creating a delightful fusion of tradition and innovation.'),
+      IceCream(
+          'assets/images/ice_cream_3.png',
+          'assets/images/ice_cream_logo.png',
+          'Ice Cream Chocolate',
+          4.4,
+          3420,
+          'A vanilla ice cream with a futuristic twist, adorned with innovative toppings. Delight in the classic and creamy flavor of vanilla, harmoniously combined with avant-garde toppings that transport your taste buds into the future. Experience the familiar comfort of vanilla while indulging in the excitement of cutting-edge toppings, creating a delightful fusion of tradition and innovation.'),
+      IceCream(
+          'assets/images/ice_cream_4.png',
+          'assets/images/ice_cream_logo.png',
+          'Ice Cream Strawberry',
+          4.6,
+          6540,
+          'A vanilla ice cream with a futuristic twist, adorned with innovative toppings. Delight in the classic and creamy flavor of vanilla, harmoniously combined with avant-garde toppings that transport your taste buds into the future. Experience the familiar comfort of vanilla while indulging in the excitement of cutting-edge toppings, creating a delightful fusion of tradition and innovation.'),
+      IceCream(
+          'assets/images/ice_cream_5.png',
+          'assets/images/ice_cream_logo.png',
+          'Ice Cream Peach',
+          4.7,
+          7450,
+          'A vanilla ice cream with a futuristic twist, adorned with innovative toppings. Delight in the classic and creamy flavor of vanilla, harmoniously combined with avant-garde toppings that transport your taste buds into the future. Experience the familiar comfort of vanilla while indulging in the excitement of cutting-edge toppings, creating a delightful fusion of tradition and innovation.'),
     ];
   }
 }

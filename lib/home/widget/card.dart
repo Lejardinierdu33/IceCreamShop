@@ -9,20 +9,20 @@ class CardSection extends StatefulWidget {
 }
 
 class _CardSectionState extends State<CardSection> {
-  bool isFavorite = false;
-  bool isShop = false;
+  List<bool> isFavoriteList = [false, false, false, false];
+  List<bool> isShopList = [false, false, false, false];
 
   GlobalKey<FlipCardState> cardKey = GlobalKey<FlipCardState>();
 
-  void toggleFavorite() {
+  void toggleFavorite(int index) {
     setState(() {
-      isFavorite = !isFavorite;
+      isFavoriteList[index] = !isFavoriteList[index];
     });
   }
 
-  void toggleShop() {
+  void toggleShop(int index) {
     setState(() {
-      isShop = !isShop;
+      isShopList[index] = !isShopList[index];
     });
   }
 
@@ -82,14 +82,14 @@ class _CardSectionState extends State<CardSection> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ElevatedButton.icon(
-                          onPressed: toggleShop,
+                          onPressed: () => toggleShop(0),
                           icon: Column(
                             children: [
                               Icon(
-                                isShop
+                                isShopList[0]
                                     ? Icons.shopping_bag
                                     : Icons.shopping_bag_outlined,
-                                color: isShop ? Color.fromRGBO(218, 165, 32, 1): Colors.white,
+                                color: isShopList[0] ? Color.fromRGBO(218, 165, 32, 1): Colors.white,
                               ),
                               const Text(
                                 "Buy",
@@ -105,14 +105,14 @@ class _CardSectionState extends State<CardSection> {
                         ),
                         const SizedBox(width: 15),
                         ElevatedButton.icon(
-                          onPressed: toggleFavorite,
+                          onPressed: () => toggleFavorite(0),
                           icon: Column(
                             children: [
                               Icon(
-                                isFavorite
+                                isFavoriteList[0]
                                     ? Icons.favorite
                                     : Icons.favorite_border_outlined,
-                                color: isFavorite ? Colors.pink : Colors.white,
+                                color: isFavoriteList[0] ? Colors.pink : Colors.white,
                               ),
                               const Text(
                                 "Favorite",
@@ -190,14 +190,14 @@ class _CardSectionState extends State<CardSection> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ElevatedButton.icon(
-                          onPressed: toggleShop,
+                          onPressed: () => toggleShop(1),
                           icon: Column(
                             children: [
                               Icon(
-                                isShop
+                                isShopList[1]
                                     ? Icons.shopping_bag
                                     : Icons.shopping_bag_outlined,
-                                color: isShop ? Color.fromRGBO(218, 165, 32, 1) : Colors.white,
+                                color: isShopList[1] ? Color.fromRGBO(218, 165, 32, 1) : Colors.white,
                               ),
                               const Text(
                                 "Buy",
@@ -213,14 +213,14 @@ class _CardSectionState extends State<CardSection> {
                         ),
                         const SizedBox(width: 15),
                         ElevatedButton.icon(
-                          onPressed: toggleFavorite,
+                          onPressed: () => toggleFavorite(1),
                           icon: Column(
                             children: [
                               Icon(
-                                isFavorite
+                                isFavoriteList[1]
                                     ? Icons.favorite
                                     : Icons.favorite_border_outlined,
-                                color: isFavorite ? Colors.pink : Colors.white,
+                                color: isFavoriteList[1] ? Colors.pink : Colors.white,
                               ),
                               const Text(
                                 "Favorite",
@@ -297,14 +297,14 @@ class _CardSectionState extends State<CardSection> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ElevatedButton.icon(
-                          onPressed: toggleShop,
+                          onPressed: () => toggleShop(2),
                           icon: Column(
                             children: [
                               Icon(
-                                isShop
+                                isShopList[2]
                                     ? Icons.shopping_bag
                                     : Icons.shopping_bag_outlined,
-                                color: isShop ? Color.fromRGBO(218, 165, 32, 1) : Colors.white,
+                                color: isShopList[2] ? Color.fromRGBO(218, 165, 32, 1) : Colors.white,
                               ),
                               const Text(
                                 "Buy",
@@ -320,14 +320,14 @@ class _CardSectionState extends State<CardSection> {
                         ),
                         const SizedBox(width: 15),
                         ElevatedButton.icon(
-                          onPressed: toggleFavorite,
+                          onPressed: () => toggleFavorite(2),
                           icon: Column(
                             children: [
                               Icon(
-                                isFavorite
+                                isFavoriteList[2]
                                     ? Icons.favorite
                                     : Icons.favorite_border_outlined,
-                                color: isFavorite ? Colors.pink : Colors.white,
+                                color: isFavoriteList[2] ? Colors.pink : Colors.white,
                               ),
                               const Text(
                                 "Favorite",
@@ -405,14 +405,14 @@ class _CardSectionState extends State<CardSection> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ElevatedButton.icon(
-                          onPressed: toggleShop,
+                          onPressed: () => toggleShop(3),
                           icon: Column(
                             children: [
                               Icon(
-                                isShop
+                                isShopList[3]
                                     ? Icons.shopping_bag
                                     : Icons.shopping_bag_outlined,
-                                color: isShop ? Color.fromRGBO(218, 165, 32, 1) : Colors.white,
+                                color: isShopList[3] ? Color.fromRGBO(218, 165, 32, 1) : Colors.white,
                               ),
                               const Text(
                                 "Buy",
@@ -428,14 +428,14 @@ class _CardSectionState extends State<CardSection> {
                         ),
                         const SizedBox(width: 15),
                         ElevatedButton.icon(
-                          onPressed: toggleFavorite,
+                          onPressed: () => toggleFavorite(3),
                           icon: Column(
                             children: [
                               Icon(
-                                isFavorite
+                                isFavoriteList[3]
                                     ? Icons.favorite
                                     : Icons.favorite_border_outlined,
-                                color: isFavorite ? Colors.pink : Colors.white,
+                                color: isFavoriteList[3] ? Colors.pink : Colors.white,
                               ),
                               const Text(
                                 "Favorite",

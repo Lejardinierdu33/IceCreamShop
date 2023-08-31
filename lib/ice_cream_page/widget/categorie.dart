@@ -33,8 +33,13 @@ class CategoriesSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 190,
+    return Container(
+      padding: EdgeInsets.only(
+        top: MediaQuery.of(context).padding.top,
+        left: 25,
+        right: 25,
+      ),
+      height: 300,
       child: Column(children: [
         const SizedBox(
           height: 40,
