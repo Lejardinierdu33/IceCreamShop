@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ice_cream_shop/models/ice_cream.dart';
+import 'package:ice_cream_shop/ice_cream_page/models/ice_cream.dart';
 import 'package:readmore/readmore.dart';
 
 class DetailIceCream extends StatefulWidget {

@@ -9,17 +9,23 @@ class CardSection extends StatefulWidget {
 }
 
 class _CardSectionState extends State<CardSection> {
+
+  // boolean like and shop
   List<bool> isFavoriteList = [false, false, false, false];
   List<bool> isShopList = [false, false, false, false];
 
   GlobalKey<FlipCardState> cardKey = GlobalKey<FlipCardState>();
 
+
+// toggle favorite
   void toggleFavorite(int index) {
     setState(() {
       isFavoriteList[index] = !isFavoriteList[index];
     });
   }
 
+
+// toggle shop
   void toggleShop(int index) {
     setState(() {
       isShopList[index] = !isShopList[index];
