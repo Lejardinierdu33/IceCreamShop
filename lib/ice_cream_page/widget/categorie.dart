@@ -30,7 +30,7 @@ class CategoriesSection extends StatelessWidget {
     {
       'icon': Icons.price_change,
       'color': Color.fromARGB(176, 75, 159, 228),
-      'title': 'Nouveautés',
+      'title': 'News',
     },
   ];
 

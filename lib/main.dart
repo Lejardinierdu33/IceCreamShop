@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ice_cream_shop/contact/contact_page.dart';
 import 'package:ice_cream_shop/home/home.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ice_cream_shop/ice_cream_page/ice_cream_page.dart';
@@ -15,7 +16,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   // index navigation
   int _currentIndex = 0;
 
@@ -28,18 +28,15 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
       // theme font
       theme: ThemeData(
         textTheme: GoogleFonts.orbitronTextTheme(),
       ),
 
-
       //navigation
       home: Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
-
           // logo
           title: Image.asset(
             'assets/images/ice_cream_logo.png',
@@ -54,8 +51,8 @@ class _MyAppState extends State<MyApp> {
         body: [
           const HomePage(),
           const IceCreamPage(),
+          const ContactPage(),
         ][_currentIndex],
-
 
         // bottom navigation
         bottomNavigationBar: Container(
@@ -76,7 +73,6 @@ class _MyAppState extends State<MyApp> {
                 topRight: Radius.circular(30),
               ),
 
-
               // navigation principale
               child: BottomNavigationBar(
                 currentIndex: _currentIndex,
@@ -87,9 +83,6 @@ class _MyAppState extends State<MyApp> {
                 unselectedItemColor: Color.fromARGB(176, 75, 159, 228),
                 type: BottomNavigationBarType.fixed,
                 items: [
-
-
-
                   //home navigation
                   BottomNavigationBarItem(
                     label: 'Home',
@@ -112,7 +105,6 @@ class _MyAppState extends State<MyApp> {
                           size: 30,
                         )),
                   ),
-
 
                   // ice cream navigation
                   BottomNavigationBarItem(
@@ -137,7 +129,6 @@ class _MyAppState extends State<MyApp> {
                         )),
                   ),
 
-
                   // location navigation
                   BottomNavigationBarItem(
                     label: 'Location',
@@ -160,7 +151,6 @@ class _MyAppState extends State<MyApp> {
                           size: 30,
                         )),
                   ),
-
 
                   // contact navigation
                   BottomNavigationBarItem(
