@@ -12,8 +12,8 @@ class LocationPage extends StatelessWidget {
   Widget build(BuildContext context) {
    return FlutterMap(
     options: MapOptions(
-      center: LatLng(51.509364, -0.128928),
-      zoom: 9.2,
+      center: const LatLng(-20.879055620356457, 55.449636206537996),
+      zoom: 18,
     ),
     nonRotatedChildren: [
       RichAttributionWidget(

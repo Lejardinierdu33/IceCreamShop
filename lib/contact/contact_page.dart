@@ -11,17 +11,21 @@ class ContactPage extends StatefulWidget {
 class _ContactPageState extends State<ContactPage> {
   final _formKey = GlobalKey<FormState>();
 
-  final confNameController = TextEditingController();
-  final speakerNameController = TextEditingController();
+  final writeNameController = TextEditingController();
+  final writeMailController = TextEditingController();
+  final selectedTitleController = TextEditingController();
+  final writeMessageController = TextEditingController();
 
-  String selectedConfType = "faq";
+  String selectedTitleType = "faq";
 
   @override
   void dispose() {
     super.dispose();
 
-    confNameController.dispose();
-    speakerNameController.dispose();
+    writeNameController.dispose();
+    writeMailController.dispose();
+    selectedTitleController.dispose();
+    writeMessageController.dispose();
   }
 
   @override
@@ -44,6 +48,9 @@ class _ContactPageState extends State<ContactPage> {
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+
+
+                  // write name
                   TextFormField(
                     style: const TextStyle(color: Colors.pink), // Text color
                     decoration: const InputDecoration(
@@ -64,9 +71,12 @@ class _ContactPageState extends State<ContactPage> {
                       }
                       return null;
                     },
-                    controller: confNameController,
+                    controller: writeNameController,
                   ),
                   const SizedBox(height: 10),
+
+
+                  // Write Mail
                   TextFormField(
                     style: const TextStyle(color: Colors.pink), // Text color
                     decoration: const InputDecoration(
@@ -87,9 +97,12 @@ class _ContactPageState extends State<ContactPage> {
                       }
                       return null;
                     },
-                    controller: speakerNameController,
+                    controller: writeMailController,
                   ),
                   const SizedBox(height: 10),
+
+
+                  // Select Title
                   DropdownButtonFormField(
                     icon: const Icon(Icons.arrow_drop_down_circle),
                     iconSize: 25,
@@ -115,14 +128,17 @@ class _ContactPageState extends State<ContactPage> {
                         borderSide: BorderSide(color: Colors.pink),
                       ), // Focused border color
                     ),
-                    value: selectedConfType,
+                    value: selectedTitleType,
                     onChanged: (value) {
                       setState(() {
-                        selectedConfType = value!;
+                        selectedTitleType = value!;
                       });
                     },
                   ),
                   const SizedBox(height: 10),
+
+
+                  // write message
                   TextFormField(
                     style: const TextStyle(color: Colors.pink), // Text color
                     decoration: const InputDecoration(
@@ -143,9 +159,13 @@ class _ContactPageState extends State<ContactPage> {
                       }
                       return null;
                     },
-                    controller: speakerNameController,
+                    controller: writeMessageController,
                   ),
                   const SizedBox(height: 10),
+
+
+
+                  // Button send
                   SizedBox(
                     width: double.infinity,
                     height: 50,
